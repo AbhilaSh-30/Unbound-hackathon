@@ -76,6 +76,13 @@
 - ![image](https://github.com/user-attachments/assets/daf44221-7fcd-4b0a-9e1e-99c7d9be8bf3)
 - ✅ **Milestone 7 On Process**
 
+## Additional Features
+
+- Added secure Auth Implementation in backend(jwt,cookie).
+- Users can be of two types : admin and normal.
+- Rate limiting has been added(if more than 3 failed attempts has to wait hal an hour to try again).
+- Input Validation 
+
 ---
 
 ## Steps to run the server:
