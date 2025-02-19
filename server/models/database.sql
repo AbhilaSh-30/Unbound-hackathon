@@ -12,3 +12,15 @@ INSERT INTO models (name) VALUES
 ('openai/gpt-3.5'),
 ('anthropic/claude-v1'),
 ('gemini/gemini-alpha');
+
+-- Milestone 3
+CREATE TABLE routing_rules (
+    id SERIAL PRIMARY KEY,
+    original_model VARCHAR(255) NOT NULL,
+    regex_pattern TEXT NOT NULL,
+    redirect_model VARCHAR(255) NOT NULL
+);
+
+-- Sample rule
+INSERT INTO routing_rules (original_model, regex_pattern, redirect_model) VALUES
+('openai/gpt-3.5', '(credit card)', 'gemini/gemini-alpha');
