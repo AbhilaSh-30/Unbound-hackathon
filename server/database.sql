@@ -33,3 +33,13 @@ CREATE TABLE file_routing_rules (
     redirect_model VARCHAR(255) NOT NULL
 );
 
+-- Additional
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    roles VARCHAR(50) CHECK (roles IN ('normal', 'admin')) NOT NULL DEFAULT 'normal',
+    created_at TIMESTAMP DEFAULT NOW()
+);
+

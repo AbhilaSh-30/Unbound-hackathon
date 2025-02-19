@@ -21,8 +21,7 @@ const chatCompletion = async (req, res) => {
   try {
     if (file) {
       console.log(`Uploaded file: ${file.originalname} (${file.mimetype})`);
-
-      // Fetch routing rule for the file type
+      
       const fileRouting = await getFileRoutingPolicy(file.mimetype);
 
       if (fileRouting) {
