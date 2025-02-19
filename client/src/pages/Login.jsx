@@ -21,7 +21,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/auth/login', { email, password });
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}auth/login`, { email, password }, { withCredentials: true });
       if (response.data.message === 'Login successful') {
         navigate('/');
       }
@@ -50,16 +50,22 @@ const Login = () => {
         className="relative z-10 bg-white p-8 rounded-2xl shadow-xl max-w-sm w-full text-center"
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Login</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="Email"
             className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)} 
+            required 
           />
           <input
             type="password"
             placeholder="Password"
             className="w-full p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 mb-4"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)} 
+            required
           />
           <button
             type="submit"

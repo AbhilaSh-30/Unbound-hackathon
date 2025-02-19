@@ -13,7 +13,6 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/routing-policy" element={<RoutingPolicyPage />} />
         <Route path="/file-routing-policy" element={<FileRoutingPolicyPage />} />
