@@ -5,6 +5,7 @@ import Register from './pages/Register';
 import HomePage from './pages/HomePage';
 import Admin from './pages/Admin';
 import RoutingPolicyPage from './pages/RoutingPolicyPage';
+import FileRoutingPolicyPage from './pages/FileRoutingPolicyPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Navigate to="/" />} />
         <Route path="/routing-policy" element={<RoutingPolicyPage />} />
+        <Route path="/file-routing-policy" element={<FileRoutingPolicyPage />} />
       </Routes>
   );
 }

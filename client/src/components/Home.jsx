@@ -11,12 +11,13 @@ const models = [
   { name: "Anthropic", image: AnthropicImage },
 ];
 
-const ChatPage = ()=> {
+const ChatPage = () => {
   const [availableModels, setAvailableModels] = useState([]);
   const [selectedProvider, setSelectedProvider] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
+  const [file, setFile] = useState(null);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}api/models`)
@@ -31,21 +32,26 @@ const ChatPage = ()=> {
       .catch((err) => console.error("Error fetching models:", err));
   }, []);
 
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
   const handleSubmit = async () => {
     if (!selectedProvider || !selectedModel || !prompt) return;
 
-    const requestBody = {
-      provider: selectedProvider,
-      model: selectedModel,
-      prompt,
-    };
+    const formData = new FormData();
+    formData.append("provider", selectedProvider);
+    formData.append("model", selectedModel);
+    formData.append("prompt", prompt);
+    if (file) {
+      formData.append("file", file);
+    }
 
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_URL}api/v1/chat/completions`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
+        body: formData,
       }
     );
 
@@ -54,18 +60,14 @@ const ChatPage = ()=> {
   };
 
   return (
-    
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-950 via-blue-900 to-black text-white p-6"
+      className="min-h-screen flex flex-col items-center justify-center text-white p-6"
     >
+      <h1 className="text-4xl font-bold mb-6 text-black">Chat with AI</h1>
 
-      {/* Title */}
-      <h1 className="text-4xl font-bold mb-6">Chat with AI</h1>
-
-      {/* Model Selection */}
       <div className="flex gap-6 mb-6">
         {models.map((model) => (
           <div key={model.name} className="flex flex-col items-center">
@@ -79,7 +81,6 @@ const ChatPage = ()=> {
         ))}
       </div>
 
-      {/* Chat Controls */}
       <div className="flex flex-col gap-4 w-full max-w-md">
         <select
           value={selectedProvider}
@@ -111,6 +112,12 @@ const ChatPage = ()=> {
           className="p-3 border rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
+        <input
+          type="file"
+          onChange={handleFileChange}
+          className="p-3 border rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
         <button
           onClick={handleSubmit}
           className="flex items-center gap-2 p-3 bg-blue-600 rounded-lg text-white hover:bg-blue-700 transition shadow-md"
@@ -119,7 +126,6 @@ const ChatPage = ()=> {
         </button>
       </div>
 
-      {/* Response */}
       {response && (
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -131,6 +137,6 @@ const ChatPage = ()=> {
       )}
     </motion.div>
   );
-}
+};
 
 export default ChatPage;
