@@ -10,11 +10,11 @@ const applyRoutingPolicy = async (provider, model, prompt) => {
         console.log(`Routing rule triggered: Redirecting '${model}' to '${row.redirect_model}'`);
         const [newProvider, newModel] = row.redirect_model.split("/");
         console.log(newProvider);
-        return { redirectedProvider: newProvider, redirectedModel: newModel };
+        return { provider: newProvider, model: newModel };
       }
     }
 
-    return model;
+    return { provider, model };
   } catch (error) {
     console.error("Error applying routing policy:", error);
     return model;
