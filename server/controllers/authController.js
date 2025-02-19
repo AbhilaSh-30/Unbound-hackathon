@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { createUser, findUserByEmail } = require("../models/userModel.js");
@@ -5,6 +6,11 @@ const { createUser, findUserByEmail } = require("../models/userModel.js");
 const loginAttempts = {};
 
 const register = async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+
     const { username, email, password, role } = req.body;
 
     try {
@@ -21,6 +27,11 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    
     const { email, password } = req.body;
 
     try {
