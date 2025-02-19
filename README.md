@@ -1,4 +1,4 @@
-# Unbound-Hackathon
+# Unbound-Hackathon - 22PC01 ABHILASH K
 
 ## Milestone 1
 
@@ -43,6 +43,19 @@
 - ![image](https://github.com/user-attachments/assets/6e41088d-eee4-4eb0-af36-d4e179c7c35d)
 - ✅ **Milestone 3 Completed**
 
+## Milestone 5
+
+- Implemented **POST PUT GET DELETE** endpoints:
+  - **Controller Logic**: Implemented in `controllers/chatController.js`
+  - **Route Definition**: Implemented in `routers/chatRouter.js`
+- Use **Postman** to test the response.
+- ![image](https://github.com/user-attachments/assets/bbd838d5-911f-4100-9f13-114125d7f909)
+- ![image](https://github.com/user-attachments/assets/f5df4e0c-609c-42aa-8c8b-72de6c40aa79)
+- ![image](https://github.com/user-attachments/assets/4ae4445f-36a1-4801-9bbd-9187320c0718)
+- ![image](https://github.com/user-attachments/assets/8194018b-3408-4b74-b86a-728c97edab75)
+- **Milestone 5 On Process**
+  
+
 ---
 
 ## Steps to run the server:
@@ -58,3 +71,5 @@
 
 ## Upcoming Milestones
 - **Milestone 4:**
+- **Milestone 6:**
+- **Milestone 7:**
