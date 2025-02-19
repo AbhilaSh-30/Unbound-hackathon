@@ -21,4 +21,18 @@ const applyRoutingPolicy = async (provider, model, prompt) => {
   }
 };
 
-module.exports = { applyRoutingPolicy };
+const getFileRoutingPolicy = async (fileType) => {
+  try {
+    const result = await pool.query(
+      "SELECT redirect_provider, redirect_model FROM file_routing_rules WHERE file_type = $1",
+      [fileType]
+    );
+
+    return result.rows.length ? result.rows[0] : null;
+  } catch (error) {
+    console.error("Error fetching file routing policy:", error);
+    return null;
+  }
+};
+
+module.exports = { applyRoutingPolicy, getFileRoutingPolicy };

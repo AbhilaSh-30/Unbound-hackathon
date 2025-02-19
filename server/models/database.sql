@@ -24,3 +24,12 @@ CREATE TABLE routing_rules (
 -- Sample rule
 INSERT INTO routing_rules (original_model, regex_pattern, redirect_model) VALUES
 ('openai/gpt-3.5', '(credit card)', 'gemini/gemini-alpha');
+
+--Milestone 7
+CREATE TABLE file_routing_rules (
+    id SERIAL PRIMARY KEY,
+    file_type VARCHAR(50) NOT NULL,
+    redirect_provider VARCHAR(255) NOT NULL,
+    redirect_model VARCHAR(255) NOT NULL
+);
+
