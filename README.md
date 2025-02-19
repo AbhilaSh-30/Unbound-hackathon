@@ -1,5 +1,18 @@
 # Unbound-Hackathon - 22PC01 ABHILASH K
 
+## Additional Features
+
+- Additional Features that I tried implementing/implemented
+- Added secure Auth Implementation in backend(jwt,cookie).
+- "pool.query(
+      "INSERT INTO routing_rules (original_model, regex_pattern, redirect_model) VALUES ($1, $2, $3)",
+      [original_model, regex_pattern, redirect_model]
+    );"
+   use of parametrized queries (prepared statements) preventing SQL injection.
+- Users can be of two types : admin and normal.
+- Rate limiting has been added(if more than 3 failed attempts has to wait half an hour to try again).
+- Input Validation
+
 ## Milestone 1
 
 - Using **PostgreSQL**, **Node.js**, and **Express** for backend development.
@@ -43,6 +56,12 @@
 - ![image](https://github.com/user-attachments/assets/6e41088d-eee4-4eb0-af36-d4e179c7c35d)
 - ✅ **Milestone 3 Completed**
 
+## Milestone 4
+
+- Create a simple minimal ui for frontend.
+- ![image](https://github.com/user-attachments/assets/21679a41-5ca2-491e-824d-31831f5320ee)
+- ✅ **Milestone 4 Completed**
+
 ## Milestone 5
 
 - Implemented **POST PUT GET DELETE** endpoints:
@@ -53,7 +72,9 @@
 - ![image](https://github.com/user-attachments/assets/f5df4e0c-609c-42aa-8c8b-72de6c40aa79)
 - ![image](https://github.com/user-attachments/assets/4ae4445f-36a1-4801-9bbd-9187320c0718)
 - ![image](https://github.com/user-attachments/assets/8194018b-3408-4b74-b86a-728c97edab75)
-- **Milestone 5 On Process**
+- Completed the frontend part
+- ![image](https://github.com/user-attachments/assets/fa54e14e-74de-4cc2-b08a-e3f1c6fecc12)
+- ✅ **Milestone 5 Completed**
   
 ## Milestone 6
 
@@ -62,7 +83,8 @@
 - Response sends an additional message indicating file processed.
 - Use **Postman** to test the response.
 - ![image](https://github.com/user-attachments/assets/b129fb76-4292-41d7-ac28-d78673550c79)
-- ✅ **Milestone 6 On Process**
+- Added the file upload feature.
+- ✅ **Milestone 6 Completed**
 
 ## Milestone 7
 
@@ -74,14 +96,9 @@
 - Use **Postman** to test the response.
 - ![image](https://github.com/user-attachments/assets/aa765d41-9e02-4cfc-82ed-02d0c9469014)
 - ![image](https://github.com/user-attachments/assets/daf44221-7fcd-4b0a-9e1e-99c7d9be8bf3)
-- ✅ **Milestone 7 On Process**
-
-## Additional Features
-
-- Added secure Auth Implementation in backend(jwt,cookie).
-- Users can be of two types : admin and normal.
-- Rate limiting has been added(if more than 3 failed attempts has to wait half an hour to try again).
-- Input Validation 
+- Completed the frontend.
+- ![image](https://github.com/user-attachments/assets/e0dd8e86-988b-493e-b5eb-c4a3857cc9b2)
+- ✅ **Milestone 7 Completed** 
 
 ---
 
@@ -95,6 +112,3 @@
    ```sh
    npm start
    ```
-
-## Upcoming Milestones
-- **Milestone 4:**
