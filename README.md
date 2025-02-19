@@ -101,7 +101,7 @@
 - ✅ **Milestone 7 Completed** 
 
 -Video
-- (https://drive.google.com/file/d/1Fa-uy1RhPfM37G4LNrnPlIDe0PyeWZiw/view?usp=drive_link)
+- (https://www.loom.com/share/c0753de5762f438b87ed300a0974a6e3?sid=c13c9d72-4c2b-4681-8700-bf44de19eebe)
 
 ---
 
