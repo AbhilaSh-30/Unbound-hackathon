@@ -64,6 +64,18 @@
 - ![image](https://github.com/user-attachments/assets/b129fb76-4292-41d7-ac28-d78673550c79)
 - ✅ **Milestone 6 On Process**
 
+## Milestone 7
+
+- Updated `middleware/routingPolicy.js` for file erouting policy.
+- Updated `controllers/chatController.js` for checking file type for re routing.
+- Implemented **POST PUT GET DELETE** endpoints:
+  - **Controller Logic**: Implemented in `controllers/fileRoutingController.js`
+  - **Route Definition**: Implemented in `routers/fileRoutingRouter.js`
+- Use **Postman** to test the response.
+- ![image](https://github.com/user-attachments/assets/aa765d41-9e02-4cfc-82ed-02d0c9469014)
+- ![image](https://github.com/user-attachments/assets/daf44221-7fcd-4b0a-9e1e-99c7d9be8bf3)
+- ✅ **Milestone 7 On Process**
+
 ---
 
 ## Steps to run the server:
@@ -79,4 +91,3 @@
 
 ## Upcoming Milestones
 - **Milestone 4:**
-- **Milestone 7:**
