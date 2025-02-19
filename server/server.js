@@ -24,10 +24,13 @@ const limiter = rateLimit({
     message: { message: "Too many requests, please try again later." }
 });
 
-app.use("/api",modelRouter);
-app.use("/api",chatRouter);
-app.use("/api",routingRulesRouter);
-app.use("/api",fileRoutingRouter);
+const apiRouter = express.Router();
+apiRouter.use(modelRouter);
+apiRouter.use(chatRouter);
+apiRouter.use(routingRulesRouter);
+apiRouter.use(fileRoutingRouter);
+
+app.use("/api",apiRouter);
 app.use("/auth", limiter, authRouter);
 
 app.listen(port, ()=>{
