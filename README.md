@@ -55,6 +55,14 @@
 - ![image](https://github.com/user-attachments/assets/8194018b-3408-4b74-b86a-728c97edab75)
 - **Milestone 5 On Process**
   
+## Milestone 6
+
+- Added `middleware/upload.js` for file upload(used multer).
+- The uploaded files are stored in `uploads/`.
+- Response sends an additional message indicating file processed.
+- Use **Postman** to test the response.
+- ![image](https://github.com/user-attachments/assets/b129fb76-4292-41d7-ac28-d78673550c79)
+- ✅ **Milestone 6 On Process**
 
 ---
 
@@ -71,5 +79,4 @@
 
 ## Upcoming Milestones
 - **Milestone 4:**
-- **Milestone 6:**
 - **Milestone 7:**
