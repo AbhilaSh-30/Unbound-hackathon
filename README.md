@@ -80,7 +80,7 @@
 
 - Added secure Auth Implementation in backend(jwt,cookie).
 - Users can be of two types : admin and normal.
-- Rate limiting has been added(if more than 3 failed attempts has to wait hal an hour to try again).
+- Rate limiting has been added(if more than 3 failed attempts has to wait half an hour to try again).
 - Input Validation 
 
 ---

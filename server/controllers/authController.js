@@ -60,7 +60,7 @@ const login = async (req, res) => {
 
         delete loginAttempts[email];
 
-        const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ id: user.id, role: user.roles }, process.env.JWT_SECRET, { expiresIn: "1h" });
 
         res.cookie("token", token, {
             httpOnly: true,
@@ -68,6 +68,7 @@ const login = async (req, res) => {
             sameSite: "Strict",
             maxAge: 60 * 60 * 1000,
         });
+        res.cookie("role", user.roles, { maxAge: 60 * 60 * 1000 });
 
         res.json({ message: "Login successful" });
     } catch (error) {
